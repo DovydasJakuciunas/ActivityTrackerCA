@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.format.FormatStyle;
 import java.util.*;
 
 public class App
@@ -17,32 +16,135 @@ public class App
         //System.out.println(System.getProperty("user.dir"));
         display(activities);
 
-        for (Activity act : activities)
-        {
-            System.out.printf("%4.2f\n",EnergyExpended(act.getKilometer(),act.getDuration()));
-        }
-        for (Activity act :activities)
-        {
-            double Numbers=EnergyExpended(act.getKilometer(), act.getDuration());
-        }
+            int count  =1;
+            for (Activity act : activities)
+            {
+                count =+ count+1;
+                //System.out.printf("%d %6.6s\n",count,act.EnergyExpended());
+                System.out.println(act.Intensity());
+            }
+
+
+        CaloriesBurned(activities);
+        //Intensity(activities);
+
+
+
     }
-    public static double EnergyExpended(double kilometer, int duration)
+
+    private static void Intensity(ArrayList<Activity> activities)
     {
-        return   duration/kilometer;
+        String intesity = null;
+        for (Activity act: activities)
+        {
+            if (act.getActivity().equals("Running"))
+            {
+                    if (act.EnergyExpended() <= 4)
+                    {
+                        intesity = "Very Light";
+                    } else if (act.EnergyExpended() >4 &&act.EnergyExpended()<=8) {
+                        intesity = " Light";
+                    }
+                    else if (act.EnergyExpended() >8 &&act.EnergyExpended()<=12) {
+                        intesity = "Moderate";
+                    }
+                    else if (act.EnergyExpended() >12 &&act.EnergyExpended()<=16) {
+                        intesity = "Vigorous";
+                    }
+                    else if (act.EnergyExpended() >16 &&act.EnergyExpended()<=24) {
+                        intesity = "Very Vigorous";
+                    }
+                    else {
+                        System.out.println("Should not exist"+" - "+ act.getActivity());
+                    }
+                System.out.println(intesity+" - "+ act.getActivity());
+            }
+            else if (act.getActivity().equals("Cycling"))
+            {
+                    if (act.EnergyExpended() <= 8)
+                    {
+                        intesity = "Very Light";
+                    } else if (act.EnergyExpended() >8 &&act.EnergyExpended()<=16) {
+                        intesity = " Light";
+                    }
+                    else if (act.EnergyExpended() >17 &&act.EnergyExpended()<=25) {
+                        intesity = "Moderate";
+                    }
+                    else if (act.EnergyExpended() >25 &&act.EnergyExpended()<=33) {
+                        intesity = "Vigorous";
+                    }
+                    else if (act.EnergyExpended() >33 &&act.EnergyExpended()<=40) {
+                        intesity = "Very Vigorous";
+                    }
+                    else {
+                        System.out.println("Should not exist"+" - "+ act.getActivity());
+                    }
+                    System.out.println(intesity+" - "+ act.getActivity());
+            }
+            else if (act.getActivity().equals("Swimming"))
+            {
+                    if (act.EnergyExpended() <= .5)
+                    {
+                        intesity = "Very Light";
+                    } else if (act.EnergyExpended() >.5 &&act.EnergyExpended()<=1.25) {
+                        intesity = " Light";
+                    }
+                    else if (act.EnergyExpended() >1.25 &&act.EnergyExpended()<=2) {
+                        intesity = "Moderate";
+                    }
+                    else if (act.EnergyExpended() >2 &&act.EnergyExpended()<=2.75) {
+                        intesity = "Vigorous";
+                    }
+                    else if (act.EnergyExpended() >2.5 &&act.EnergyExpended()<=3.5) {
+                        intesity = "Very Vigorous";
+                    }
+                    else {
+                        System.out.println("Should not exist"+" - "+ act.getActivity());
+                    }
+                    System.out.println(intesity+" - "+ act.getActivity());
+            }
+
+
+        }
+    }
+
+    private static void CaloriesBurned(ArrayList<Activity> activities) {
+        for (Activity act: activities)
+        {
+            if (act.getActivity().equals("Running"))
+            {
+                if (act.EnergyExpended()*act.getDuration()<= 4)
+                {
+                    System.out.println(act.EnergyExpended());
+                }
+            }
+            else if(act.getActivity().equals("Swimming"))
+            {
+
+            }
+            else if(act.getActivity().equals("Cycling"))
+            {
+
+            }
+            else
+            {
+                System.out.println("Not included in the list of activities!!!");
+            }
+        }
 
     }
-    public static int CaloriesBurned(double Numbers,String activity,int duration)
-    {
 
 
-        return 1;
-    }
+
+
+
+
 
 
     //All to do with reading and display *Tab has 4 characters in it
     public static void display(ArrayList<Activity> activities){
         System.out.printf("%-15s %-11s %-10s %-10s %-20s\n","Activity Type","Date","Duration","Distance","Average Heart Rate");
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/YYYY");
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         for (Activity act: activities)
         {
             System.out.printf("%-15s %-11s %-10d %-10.2f %-5d\n", act.getActivity(), df.format(act.getDate()), act.getDuration(), act.getKilometer(), act.getAverageHeartRate());

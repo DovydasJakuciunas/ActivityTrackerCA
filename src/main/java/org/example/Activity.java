@@ -1,17 +1,39 @@
 package org.example;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import org.example.Inheritance.Running;
+
 import java.util.Date;
 
 public class Activity
 {
-    enum ActivitiesType {Running,Swimming,Cycling};
+
+    //Create a method that calculates the calories burned for a given activity
+    //Using average heart rate, duration and the method EnergyExpanded()
+    //Create a method that calculates the intensity of the activity
+    public String Intensity()
+    {
+        String intesity = null;
+        if (this.activity.equals("Running"))
+        {
+            case 0:
+                intesity = VERY_LIGHT;
+        }
+        return intesity;
+    }
+
+
+
+
+
+    enum activeType{RUNNING,CYCLING,SWIMMING};
+    enum intensityOfActivity{VERY_LIGHT,LIGHT,MODERATE,VIGOROUS,VERY_VIGOROUS};
+
     String activity;
     int duration;
     Date date;
     double kilometer;
     int averageHeartRate;
+    double energyBurned;
 
     public Activity(String activity, int duration, Date date, double kilometer, int averageHeartRate) {
         this.activity = activity;
@@ -21,7 +43,10 @@ public class Activity
         this.averageHeartRate = averageHeartRate;
     }
     public Activity(){};
-
+    public double EnergyExpended()
+    {
+        return energyBurned = kilometer*100/duration;
+    }
     //Getters
     public String getActivity() {
         return activity;
@@ -39,7 +64,6 @@ public class Activity
         return averageHeartRate;
     }
 
-    //Setters
 
     @Override
     public String toString() {
@@ -51,16 +75,5 @@ public class Activity
                 ", averageHeartRate=" + averageHeartRate +
                 '}';
     }
-
-
-    public void getActivityType()
-    {
-
-    }
-
-
-
-
-
 
 }

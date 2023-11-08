@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b39cfc63-f95b-44e1-a9f3-3641b2431d4c" name="Changes" comment="Added Activity class and read file">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activity_data_100.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activity_data_50.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Inheritance/Cycling.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Inheritance/Running.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Inheritance/Swimming.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WhatToDO" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/QuickTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -34,17 +41,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dovyj\IdeaProjects\ActivityTrackerCA\target" />
       <recent name="C:\Users\dovyj\IdeaProjects\ActivityTrackerCA" />
+      <recent name="C:\Users\dovyj\IdeaProjects\ActivityTrackerCA\target" />
     </key>
   </component>
   <component name="RunManager">
@@ -106,6 +114,9 @@
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

@@ -1,30 +1,10 @@
 package org.example;
 
-import org.example.Inheritance.Running;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Activity
 {
-
-    //Create a method that calculates the calories burned for a given activity
-    //Using average heart rate, duration and the method EnergyExpanded()
-    //Create a method that calculates the intensity of the activity
-    public String Intensity()
-    {
-        String intesity = null;
-        if (this.activity.equals("Running"))
-        {
-
-        }
-        return intesity;
-    }
-
-
-
-
 
     enum activeType{RUNNING,CYCLING,SWIMMING};
     enum intensityOfActivity{VERY_LIGHT,LIGHT,MODERATE,VIGOROUS,VERY_VIGOROUS};
@@ -44,10 +24,7 @@ public class Activity
         this.averageHeartRate = averageHeartRate;
     }
     public Activity(){};
-    public double EnergyExpended()
-    {
-        return energyBurned = kilometer*100/duration;
-    }
+
     //Getters
     public String getActivity() {
         return activity;
@@ -64,8 +41,6 @@ public class Activity
     public int getAverageHeartRate() {
         return averageHeartRate;
     }
-
-
     @Override
     public String toString() {
         return "Activity{" +
@@ -76,6 +51,18 @@ public class Activity
                 ", averageHeartRate=" + averageHeartRate +
                 '}';
     }
+
+    public double EnergyExpended()
+    {
+        return energyBurned = kilometer*100/duration;
+    }
+
+    public double averageDistancePerActivity()
+    {
+        return kilometer/duration;
+    }
+
+
 
 
 

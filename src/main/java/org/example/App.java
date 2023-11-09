@@ -14,23 +14,46 @@ public class App
         ArrayList<Activity> activities = new ArrayList<Activity>();
         readFile("activity_data_10.csv", activities);
         //System.out.println(System.getProperty("user.dir"));
-        display(activities);
-
-            int count  =1;
-            for (Activity act : activities)
-            {
-                count =+ count+1;
-                //System.out.printf("%d %6.6s\n",count,act.EnergyExpended());
-                System.out.println(act.Intensity());
-            }
 
 
-        CaloriesBurned(activities);
+
+        MainMenu(activities);
+
+        //CaloriesBurned(activities);
         //Intensity(activities);
 
 
 
     }
+
+    private static void MainMenu(ArrayList<Activity> activities)
+    {
+
+        DisplayMenu menu = new DisplayMenu(activities);
+        //menu.display();
+        //menu.displayDateAscending();
+        //menu.displayDateDescending();
+        //menu.displayDurationAscending();
+        //menu.displayDurationDescending();
+        //menu.displayTypeOfActivity();
+        //menu.displayDistanceAscending();
+        //menu.displayDistanceDescending();
+
+        System.out.println("Welcome to The Best Activity Tracker");
+        System.out.println("Please select any of the following options to view your stats");
+        Scanner kb = new Scanner(System.in);
+        int choice = 0;
+        do {
+
+        }
+        while(choice!=0);
+    }
+    private static void printMenu()
+    {
+        System.out.printf("%2f %58s", 1, "Exit");
+
+    }
+
 
     private static void Intensity(ArrayList<Activity> activities)
     {
@@ -142,14 +165,7 @@ public class App
 
 
     //All to do with reading and display *Tab has 4 characters in it
-    public static void display(ArrayList<Activity> activities){
-        System.out.printf("%-15s %-11s %-10s %-10s %-20s\n","Activity Type","Date","Duration","Distance","Average Heart Rate");
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        for (Activity act: activities)
-        {
-            System.out.printf("%-15s %-11s %-10d %-10.2f %-5d\n", act.getActivity(), df.format(act.getDate()), act.getDuration(), act.getKilometer(), act.getAverageHeartRate());
-        }
-    }
+
     public static void readFile(String fileName, ArrayList<Activity> activities) throws FileNotFoundException, ParseException {
         File f = new File(fileName);
         Scanner in = new Scanner(f);

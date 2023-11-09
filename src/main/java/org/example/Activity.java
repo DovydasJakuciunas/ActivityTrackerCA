@@ -2,6 +2,8 @@ package org.example;
 
 import org.example.Inheritance.Running;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Activity
@@ -15,8 +17,7 @@ public class Activity
         String intesity = null;
         if (this.activity.equals("Running"))
         {
-            case 0:
-                intesity = VERY_LIGHT;
+
         }
         return intesity;
     }
@@ -75,5 +76,7 @@ public class Activity
                 ", averageHeartRate=" + averageHeartRate +
                 '}';
     }
+
+
 
 }
